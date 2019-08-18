@@ -1,0 +1,41 @@
+{% extends "master.html.twig" %}
+{% block content %}
+    <nav class="navbar navbar-light bg-light justify-content-between search-bar">
+        <a class="navbar-brand"></a>
+        <form method="post" action="search" class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" value="{{ searchTerm }}">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    {% for item in ideas %}
+        <div class="idea-list">
+            <div class="row">
+                <div class="col-sm-2 idea-image-frame">
+                    <img src="uploads/{{ item.imagepath }}" alt="" class="img-fluid idea-image">
+                </div>
+                <div class="col-sm-10 idea-detail-frame" >
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text idea-summary" >{{ item.summary }} </p>
+                    <a href="{{ baseUrl() }}/ideas/{{ item.ideaid }}" class="btn btn-secondary view-more" style="float: right">VIEW MORE</a>  
+                </div>
+            </div>
+            <div class="row idea-footer-frame" >
+                <div class="col-sm-2">
+                    <i class="fas fa-calendar-check"></i>
+                    {{ item.submissiondate|date("M d Y") }}           
+                </div>
+                <div class="col-sm-2">
+                    <i class="fas fa-user-circle"></i>
+                    {{ item.displayname }}         
+                </div>
+                <div class="col-sm-4">
+                   <i class="fas fa-map-marked-alt"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&query={{ item.lat }},{{ item.lon }}" style="color:#fdc650" target="_blank"> {{ item.lat }}  {{ item.lon }} </a>          
+                </div> 
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

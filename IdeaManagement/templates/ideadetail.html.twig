@@ -1,0 +1,50 @@
+{% extends "master.html.twig" %}
+
+{% block content %}
+    <div class="card idea-view" >
+        <img src="{{ baseUrl() }}/uploads/{{ idea.imagepath }}" alt="" class="card-img-top"/>
+        <div class="card-body">
+            <h5>{{ idea.title }}</h5>
+            <p class="card-text">{{ idea.summary }}</p>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="row" style="text-align: center" >
+                <div class="col-sm-6">
+                    <i class="fas fa-calendar-check"></i>
+                    {{ item.submissiondate|date("M d Y") }}           
+                </div>
+                <div class="col-sm-6">
+                    <i class="fas fa-user-circle"></i>
+                    {{ idea.displayname }}         
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" comment-panel text-white">
+        Comment panel
+        <form method="post">
+            <textarea class="form-control" name="message" placeholder="write a comment..." rows="3"></textarea>
+            <br>
+            <button type="submit" class="btn btn-info pull-right">Save</button>
+        </form>
+
+
+        {% for item in comments %}
+            <div>
+                <div class="row comment-item">
+                    <div class="col-sm-3  comment-image-frame">
+                        <i class="fas fa-user-circle"></i>
+                        <div>{{ item.displayname }}</div>
+                        <i class="fas fa-calendar-check"></i>
+                        {{ item.creationtimestamp|date("M d Y") }}   
+                    </div>
+                    <div class="col-sm-9 comment-detail-frame" >
+                        <p class="card-text text-white" >{{ item.message }} </p>
+                    </div>
+                </div>             
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

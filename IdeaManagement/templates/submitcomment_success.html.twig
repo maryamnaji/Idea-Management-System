@@ -1,0 +1,23 @@
+{% extends "master.html.twig" %}
+
+{% block content %}
+    <div class="alert alert-success text-center" role="alert">
+        <span>You comment submitted successfully !</span> <span id="countdown"> </span>
+    </div>
+    <script>
+        var seconds = 3;
+        var el = document.getElementById('seconds-counter');
+        function incrementSeconds() {
+            seconds -= 1;
+            debugger;
+            $("#countdown").text(seconds);
+        }
+        var cancel = setInterval(incrementSeconds, 1000);
+        
+        // Your application has indicated there's an error
+        window.setTimeout(function () {
+            // Move to a new location or you can do something else
+            window.location.href = "{{ baseUrl() }}/ideas/{{ id }}";
+        }, 3000);
+    </script>
+{% endblock %}

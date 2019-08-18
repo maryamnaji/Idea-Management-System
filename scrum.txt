@@ -1,0 +1,47 @@
+
+Day01:
+1.Project Proposal
+2.Creating git,trello  and scrum
+4.Searching for the technology we are going to use
+
+Day02:
+1-Creating database
+2-Add bootstrap
+3-Working on project design 
+4.Creating registration page
+
+Day03:
+1.Creating "Home" page user interface 
+2.Creating "Home" page php file
+
+Day04:
+1.Creating "registration" page user interface 
+2.Creating "registration" page php file
+3.Creating "login" page user interface 
+4.Creating "login" page php file
+
+Day05:
+1.Creating "idea submission" page user interface 
+2.Creating "idea submission" page php file
+4.Creating "idea list" page user interface 
+5.Creating "idea list" page php file
+
+Day06:
+1.Creating "Contact us" page user interface 
+2.Creating "Contact us" page php file
+3.Creating "About us" page user interface 
+5.Creating "About us" page php file
+
+Day07:
+1.Adding blob technology
+2.user can upload image for idea
+
+
+Day08:
+Working on presentation...
+
+Day09:
+1.Bug fixes
+2.Deploying priject on host
+
+
